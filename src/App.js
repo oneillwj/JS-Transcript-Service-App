@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import TextEnterBox from './Components/TextEnterBox';
+import IgnoreTextBox from './Components/IgnoreTextBox';
+import TextReturnBox from './Components/TextReturnBox';
+import SubmitButton from './Components/Submit Button';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TextEnterBox/> 
+      <IgnoreTextBox/>
+      <SubmitButton/>
+      <TextReturnBox/>
+
     </div>
   );
 }
