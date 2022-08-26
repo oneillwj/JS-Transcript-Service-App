@@ -3,9 +3,28 @@ import { Button } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import axios from 'axios';
 
+const handleClick = () => {
 
+  console.log("Button has been clicked!!");
 
+  //POST call
+  axios.post(
+    //reaching out to the springboot server
+    'http://localhost:8080/transcribe',
+    //where we put in the data
+    {ignoreText: ["the", "his"], text: "The turkey stubbed his toe on the stump."},
+    {
+      //"meta-data" (conditions for information needed to and from(expectations))
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+    },
+  )
+  .then((response) => {console.log(response)})
+  .catch((error) => {console.log(error)});
 
+  };
 
 export default function SubmitButton() {
   return (
@@ -19,7 +38,7 @@ export default function SubmitButton() {
                 flexDirection: "row",
                 justifyContent:"center",
             }}
-            onClick={() => {console.log("Submit Button has been hit");}} 
+            onClick={handleClick} 
             >
           Here We Go
         </Button>
