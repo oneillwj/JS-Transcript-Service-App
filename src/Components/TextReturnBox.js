@@ -14,6 +14,10 @@ import Paper from '@mui/material/Paper';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { visuallyHidden } from '@mui/utils';
+import { blueGrey } from '@mui/material/colors';
+
+const main = blueGrey[700];
+const mainLight = blueGrey[200];
 
 function createData(word, occurrences) {
   return {
@@ -153,16 +157,17 @@ export default function EnhancedTable() {
 
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', backgroundColor: main}}>
       <Paper sx={{ width: '100%', mb: 2 }}>
       <Toolbar
         sx={{
           pl: { sm: 2 },
-          pr: { xs: 1, sm: 1 }
+          pr: { xs: 1, sm: 1 },
+          backgroundColor: main
         }}
       >
         <Typography
-            sx={{ flex: '1 1 100%' }}
+            sx={{ flex: '1 1 100%', backgroundColor: main }}
             variant="h6"
             id="tableTitle"
             component="div"
@@ -173,7 +178,7 @@ export default function EnhancedTable() {
 
         <TableContainer>
           <Table
-            sx={{ minWidth: 750 }}
+            sx={{ minWidth: 750, backgroundColor: main }}
             aria-labelledby="tableTitle"
             size={dense ? 'small' : 'medium'}
           >
@@ -191,7 +196,7 @@ export default function EnhancedTable() {
                 .map((row, index) => {
                 
                   return (
-                    <TableRow>
+                    <TableRow sx={{backgroundColor: mainLight,}}>
                       <TableCell align="left">{row.word}</TableCell>
                       <TableCell align="right">{row.occurrences}</TableCell>
                     </TableRow>

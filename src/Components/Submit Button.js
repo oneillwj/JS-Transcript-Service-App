@@ -2,6 +2,9 @@ import * as React from 'react';
 import { Button } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import axios from 'axios';
+import { blueGrey } from '@mui/material/colors';
+
+const main = blueGrey[700];
 
 const handleClick = () => {
 
@@ -28,7 +31,9 @@ const handleClick = () => {
 
 export default function SubmitButton() {
   return (
-    <Grid container justifyContent="center">
+    <Grid container justifyContent="center"sx={{
+      backgroundColor: main
+    }}>
         <Button
             size="medium"
             variant="contained"
