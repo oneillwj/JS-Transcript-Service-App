@@ -2,9 +2,14 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { blueGrey } from '@mui/material/colors';
+//import { PropTypes } from 'prop-types';
 
 const main = blueGrey[700];
 const mainLight = blueGrey[200];
+
+function handleChange(event){
+  console.log(event.target.value);
+}
 
 export default function TextEnterBox() {
   return (
@@ -30,7 +35,8 @@ export default function TextEnterBox() {
       sx={{
         backgroundColor: mainLight,
       }}
-     
+      //on change when text is entered save that as state
+      onChange={handleChange}
       />
 
       
