@@ -6,6 +6,7 @@ import TextReturnBox from './Components/TextReturnBox';
 import SubmitButton from './Components/Submit Button';
 
 document.body.style.backgroundColor = "#455a64";
+
 function App() {
   return (
     <div className="App">

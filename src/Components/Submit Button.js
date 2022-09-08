@@ -3,19 +3,30 @@ import { Button } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import axios from 'axios';
 import { blueGrey } from '@mui/material/colors';
+import TextEnterBox from './TextEnterBox';
+//import IgnoreTextBox from './IgnoreTextBox';
 
 const main = blueGrey[700];
+
 
 const handleClick = () => {
 
   console.log("Button has been clicked!!");
+  //I think I need to connect these functions to their useState/handleChange functions
+  //TextEnterBox()
+  //IgnoreTextBox()
+  //then need to figure out how to use this information into my axios.post call
+  //maybe instead of it being uptop we put it in the post call itself
+  //or change the names to textenterboxhandler and then send it to POST
+  const submittedEnteredTextBox = TextEnterBox;
+  //const submittedIgnoreTextBox = IgnoreTextBox;
 
   //POST call
   axios.post(
     //reaching out to the springboot server
-    'http://localhost:8080/transcribe',
+    '/transcribe',
     //where we put in the data
-    {ignoreText: ["the", "his"], text: "The turkey stubbed his toe on the stump."},
+    {ignoreText: ["please"], text: [submittedEnteredTextBox]},
     {
       //"meta-data" (conditions for information needed to and from(expectations))
       headers: {
